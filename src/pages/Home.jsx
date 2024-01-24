@@ -1496,6 +1496,196 @@ React Events
 <p className="bgExample">{`<button onClick={shoot}>Take the Shot!</button>`}</p>
 <h3>HTML</h3>
 <p className="bgExample">{`<button onclick="shoot()">Take the Shot!</button>`}</p>
+<br />
+<h2>React.JS Conditional Rendering</h2>
+<p>React mein, aap conditionally components ko render kar sakte hain.</p>
+<p>aisa karne ke multiple tareeqe hain.</p>
+<h2>
+  <span className="clrRed">if</span> Statement
+</h2>
+<p>Hum <span className="clrRed">if</span> JavaScript operator ka istemal kar sakte hain decide karne ke liye ke konsa component render karna hai</p>
+<h3>Example</h3>
+<p>We'll use these two components (hum in dono components ka istemaal karenge)</p>
+<p className="bgExample">
+  <pre>
+ {`
+ function MissedGoal() {
+  return <h1>MISSED!</h1>;
+}
+
+function MadeGoal() {
+  return <h1>Goal!</h1>;
+}`}   
+  </pre>
+</p>
+<h3>
+Example
+</h3>
+<p>Ab, hum ek aur component banayenge jo choose karega ke konsa component render karna hai based on a condition:</p>
+<p className="bgExample">
+  <pre>
+  {`
+  function Goal(props) {
+    const isGoal = props.isGoal;
+    if (isGoal) {
+      return <MadeGoal/>;
+    }
+    return <MissedGoal/>;
+  }
+  
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<Goal isGoal={false} />);`}  
+  </pre>
+</p>
+<p>Koshish karein <span className="clrRed">isGoal</span> attribute ko <span className="clrRed">true</span> mein badalne ki:</p>
+<h3>Example</h3>
+<p className="bgExample">
+  <pre>
+ {`
+ const root = ReactDOM.createRoot(document.getElementById('root'));
+ root.render(<Goal isGoal={true} />);`}   
+  </pre>
+</p>
+<h2>
+  Logical && Operator
+</h2>
+<p>React component ko conditionally render karne ka ek aur tareeka hai aur wo hai && operator ka istemal karna.</p>
+<h3>Example</h3>
+<p>
+Hum JSX mein JavaScript expressions ko curly braces ka istemal karke shamil kar sakte hain:</p>
+<p className="bgExample">
+ <pre>
+ {`
+ function Garage(props) {
+  const cars = props.cars;
+  return (
+    <>
+      <h1>Garage</h1>
+      {cars.length > 0 &&
+        <h2>
+          You have {cars.length} cars in your garage.
+        </h2>
+      }
+    </>
+  );
+}
+
+const cars = ['Ford', 'BMW', 'Audi'];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage cars={cars} />);
+ `} </pre> 
+</p>
+<p>Agar <span className="clrRed">cars.length {`>`} 0</span>  true ke barabar hai, to && ke baad ka expression render hoga.</p>
+<p>Koshish karein cars array ko empty karne ki:</p>
+<h3>Example</h3>
+<p className="bgExample">
+  <p>
+ {`
+ const cars = [];
+ const root = ReactDOM.createRoot(document.getElementById('root'));
+ root.render(<Garage cars={cars} />);`}   
+  </p>
+</p>
+
+<h2>Ternary Operator</h2>
+<p>Ek aur tareeka elements ko conditionally render karne ka hai ternary operator ka istemal karna</p>
+<p className="bgExample">{`condition ? true : false`}</p>
+<p>We will go back to the goal example.</p>
+<h3>Example</h3>
+<p>
+Agar <span className="clrRed">isGoal</span> true hai, to <span className="clrRed">MadeGoal</span> component ko wapas karein, warna <span className="clrRed">MissedGoal</span> component ko wapas karein:
+</p>
+<p className="bgExample">
+<pre>
+ {`
+ function Goal(props) {
+  const isGoal = props.isGoal;
+  return (
+    <>
+      { isGoal ? <MadeGoal/> : <MissedGoal/> }
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Goal isGoal={false} />);`} </pre>  
+</p>
+<br />
+<h2>
+  React Lists
+</h2>
+<p>React mein aap ek tarah ke loop ke saath lists ko render karenge."</p>
+<p>JavaScript map() array method generally preffered method hai.</p>
+<h3>
+  Example
+</h3>
+<p>chalo render kare all of the cars from our garage:</p>
+<p className="bgExample">
+  <pre>
+ {`
+ function Car(props) {
+  return <li>I am a { props.brand }</li>;
+}
+
+function Garage() {
+  const cars = ['Ford', 'BMW', 'Audi'];
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <ul>
+        {cars.map((car) => <Car brand={car} />)}
+      </ul>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);`}   
+  </pre>
+</p>
+<p>
+Jab aap is code ko apne <span className="clrRed">React App</span> mein chalayenge, to yeh kaam karega lekin aapko ek warning milegi ki list items ke liye 'key' nahi di gayi hai.
+</p>
+<h2>
+  Keys
+</h2>
+<p>
+Keys React ko elements ke track mein rakhne mein help karti hain. Is tarah, agar koi item update ya remove hota hai, to sirf woh item dubara render hoga poori ki poori list nahi.
+</p>
+<p>Keys ko har sibling ke liye unique hona chahiye. Lekin globally duplicate ho sakte hain.</p>
+<p className="bgYellow">
+Aam taur par, key ek unique ID honi chahiye jo har item ko assign ki gayi ho. Ant mein, aap array index ko bhi ek key ke roop mein istemal kar sakte hain.
+</p>
+<h3>Example</h3>
+<p>
+Chaliye hamara previous example ko keys shamil karne ke liye refactor karte hain:
+</p>
+<p className="bgExample">
+ <pre>
+ {`
+ function Car(props) {
+  return <li>I am a { props.brand }</li>;
+}
+
+function Garage() {
+  const cars = [
+    {id: 1, brand: 'Ford'},
+    {id: 2, brand: 'BMW'},
+    {id: 3, brand: 'Audi'}
+  ];
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <ul>
+        {cars.map((car) => <Car key={car.id} brand={car.brand} />)}
+      </ul>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);`} </pre> 
+</p>
       </div>
     </div>
   );
