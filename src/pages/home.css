@@ -4,19 +4,21 @@ margin: auto;
 
 } */
 .navbar{
-    border: 1px solid rgb(248, 246, 246);
     margin-bottom: 1rem;
-    color: rgb(15, 14, 16);
-    background-color: rgb(52, 194, 245);
-    text-align: center;
-    border-radius: 10px;
+    /* color: rgb(15, 14, 16); */
+    background-color: rgb(3, 0, 3);
+    /* border-radius: 10px; */
+    padding: 20px;
 
 
 }
 .logotxt{
-    background-color: rgb(250, 239, 81);
-    font-weight: 800;
-    padding: 10px;
+    font-weight:bolder;
+    font-size: larger;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(235, 249, 103);
+
+    /* padding: 10px; */
 }
 .dj{
     text-align: left;

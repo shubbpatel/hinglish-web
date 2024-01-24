@@ -4,7 +4,7 @@ import "./home.css";
 export default function Home() {
   return (
     <div>
-      <nav className="navbar"> <h1 className="logotxt" >Hinglish Web</h1></nav>
+      <nav className="navbar"> <a className="logotxt" ><b>Hinglish Web</b></a></nav>
       <div className="dj">
         <h1>React</h1>
         <h2>Getting Started</h2>
@@ -680,7 +680,7 @@ const [add, subtract, multiply, divide] = calculate(4, 7);
           mein copy karne help karta hai.
         </p>
         <h3>Example</h3>
-        <p>
+        <p className="bgExample">
           <pre>
             {`
         const numbersOne = [1, 2, 3];
@@ -796,7 +796,7 @@ const [add, subtract, multiply, divide] = calculate(4, 7);
         <p>
           <span className="clrRed">text.js</span>
         </p>
-        <p>
+        <p className="bgExample">
           <pre>
             {`
          const text = () => {
@@ -909,7 +909,7 @@ Syntax: condition ? <expression if true> : <expression if false>
           </pre>
         </p>
         <p>result id "root" wale {`<div>`} element mein display hota hai</p>
-        <p>
+        <p className="bgExample">
           <pre>
             {`<body>
       <div id="root"></div>
