@@ -4,7 +4,7 @@ import "./home.css";
 export default function Home() {
   return (
     <div>
-      <nav className="navbar"> <a className="logotxt" href="/" ><b>Hinglish Web</b></a></nav>
+      <nav className="navbar"> <a className="logotxt" href="/" >Hinglish Web</a></nav>
       <div className="dj">
         <h1>React</h1>
         <h2>Getting Started</h2>
