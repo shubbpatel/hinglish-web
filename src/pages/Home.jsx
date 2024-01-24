@@ -4,7 +4,15 @@ import "./home.css";
 export default function Home() {
   return (
     <div>
-      <nav className="navbar"> <a className="logotxt" href="/" >Hinglish Web</a></nav>
+      <nav className="navbar">
+        {" "}
+        <a className="logotxt" href="/">
+          Hinglish Web
+        </a>
+        {/* <a className="logotxt" href="#JSX">
+          JSX
+        </a> */}
+      </nav>
       <div className="dj">
         <h1>React</h1>
         <h2>Getting Started</h2>
@@ -15,13 +23,10 @@ export default function Home() {
         <p>React ka istemal single-page applications banane mein hota hai.</p>
         <p>React ka istemal single-page applications banane mein hota hai.</p>
         <p>React hamen reusable UI components banane me madad karta hai.</p>
-
         <h2>Learn by Examples</h2>
-
         <p className="bgExample">
-            <pre>
-
-          {` import React from 'react'; import ReactDOM from 'react-dom/client';
+          <pre>
+            {` import React from 'react'; import ReactDOM from 'react-dom/client';
           function Hello(props){" "}
           {
               return <h1>Hello World!</h1>;
@@ -29,9 +34,8 @@ export default function Home() {
             const container = document.getElementById("root"); const root =
             ReactDOM.createRoot(container);
         root.render(<Hello />); `}
-        </pre>
+          </pre>
         </p>
-
         <h2>Create React App</h2>
         <p>
           React sikhne aur test karne ke liye, aapko apne computer par ek React
@@ -43,7 +47,6 @@ export default function Home() {
           chalaiye to ek React application my-react-app naam se ban jayegi:
         </p>
         <p className="bgBlue">npx create-react-app my-react-app</p>
-
         <p>
           create-react-app sab kuch set up karega jo aapko ek React application
           chalane ke liye zaruri hogi."
@@ -135,14 +138,13 @@ export default function Home() {
         <h3>Example</h3>
         <p>A simple class constructor:</p>
         <p className="bgExample">
-            <pre>
-
-          {`class Bike {
+          <pre>
+            {`class Bike {
               constructor(name) {
                   this.brand = name;
                 }
             } `}
-            </pre>
+          </pre>
         </p>
         <p className="bgYellow">
           Class ke naam ka dhyan dijiye. Humne naam "bike" ko ek uppercase
@@ -153,32 +155,29 @@ export default function Home() {
         <br />
         <h3>Example</h3>
         <p className="bgExample">
-            <pre>
-
-          { `class Bike {
+          <pre>
+            {`class Bike {
               constructor(name) {
                   this.brand = name;
                 }
             }
             
         const mybike = new bike("BMW");`}
-        </pre>
+          </pre>
         </p>
         <br />
         <p className="bgYellow">
           Note: Constructor function autometically call ho jaati hai jab object
           initialize hota hai{" "}
         </p>
-
         <br />
         <h2>Method in Classes</h2>
         <p>Aap ek class mein apne methods add kar sakte hain.</p>
         <h4>Example</h4>
         <p>Ek method banaiye jiska naam "present" ho:</p>
         <p className="bgExample">
-            <pre>
-
-          {`class Car {
+          <pre>
+            {`class Truck {
               constructor(name) {
                   this.brand = name;
                 }
@@ -188,12 +187,12 @@ export default function Home() {
 }
 }
 
-const mycar = new Car("Ford");
-mycar.present(); `}
-</pre>
+const mytruck = new Truck("Tata");
+mytruck.present(); `}
+          </pre>
         </p>
         <p>
-          Jaise ki aap upar ke udaharan mein dekh sakte hain, aap method ko
+          Jaise ki aap upar ke example mein dekh sakte hain, aap method ko
           object ke method ka naam refer karte hue bulate hain, jise parentheses
           ke saath follow kiya jata hai (parameters parentheses ke andar jaate
           hain).
@@ -208,13 +207,12 @@ mycar.present(); `}
         </p>
         <h3>Example</h3>
         <p>
-          Ek class banaiye jiska naam "Model" hai, jo "Car" class ke sabhi
+          Ek class banaiye jiska naam "Model" hai, jo "Truck" class ke sabhi
           methods ko inherit karegi:
         </p>
         <p className="bgExample">
-            <pre>
-
-          {`class Car {
+          <pre>
+            {`class Truck {
               constructor(name) {
                   this.brand = name;
                 }
@@ -224,7 +222,7 @@ mycar.present(); `}
     }
 }
 
-class Model extends Car {
+class Model extends Truck {
     constructor(name, mod) {
         super(name);
         this.model = mod;
@@ -233,9 +231,9 @@ class Model extends Car {
         return this.present() + ', it is a ' + this.model
     }
 }
-const mycar = new Model("Ford", "Mustang");
-mycar.show(); `}
-</pre>
+const mytruck = new Model("Tata", "Ashok leyland");
+mytruck.show(); `}
+          </pre>
         </p>
         <p>super() method parent class ko refer karta hai.</p>
         <p>
@@ -243,7 +241,6 @@ mycar.show(); `}
           ke constructor method ko call karte hain aur parent class ke
           properties aur methods ka upayog karte hain.
         </p>
-
         <br />
         <br />
         <h2>ES6 Arrow Functions</h2>
@@ -251,7 +248,6 @@ mycar.show(); `}
           in simple words: Arrow functions humein chhoti syntax mein function
           likhne me madad karte hain
         </p>
-
         <h3>Example </h3>
         <p>before: </p>
         <p className="bgExample">
@@ -334,9 +330,8 @@ mycar.show(); `}
           function call karta hai:
         </p>
         <p className="bgExample">
-            <pre>
-
-          {`class Header {
+          <pre>
+            {`class Header {
               constructor() {
                   this.color = "Red";
                 }
@@ -354,7 +349,7 @@ mycar.show(); `}
             
             //A button object calls the function:
             document.getElementById("btn").addEventListener("click", myheader.changeColor);  `}
-            </pre>
+          </pre>
         </p>
         <h3>Example</h3>
         <p>
@@ -362,9 +357,8 @@ mycar.show(); `}
           chahe jo bhi function ko call kare:
         </p>
         <p className="bgExample">
-            <pre>
-
-          {`class Header {
+          <pre>
+            {`class Header {
               constructor() {
                   this.color = "Red";
                 }
@@ -383,7 +377,7 @@ window.addEventListener("load", myheader.changeColor);
 
 //A button object calls the function:
 document.getElementById("btn").addEventListener("click", myheader.changeColor); `}
-</pre>
+          </pre>
         </p>
         <p>
           Jab aap functions ke saath kaam kar rahe hain, toh in differences ko
@@ -404,7 +398,6 @@ document.getElementById("btn").addEventListener("click", myheader.changeColor); 
           <span style={{ color: "purple" }}>let</span>, aur{" "}
           <span style={{ style: "pink" }}>const</span>.
         </p>
-
         <h3>Example</h3>
         <p>var</p>
         <p className="bgExample">var x = 5.6;</p>
@@ -491,15 +484,14 @@ document.getElementById("btn").addEventListener("click", myheader.changeColor); 
         <h3>Example</h3>
         <p>Ek array se items ki ek list banaiye:</p>
         <p className="bgExample">
-            <pre>
-{`
+          <pre>
+            {`
 
           const myArray = ['apple', 'banana', 'orange'];
           const myList = myArray.map((item) => <p>{item}</p>)
 `}
-            </pre>
+          </pre>
         </p>
-
         <br />
         <h2>ES6 Destructuring</h2>
         <p>
@@ -508,7 +500,6 @@ document.getElementById("btn").addEventListener("click", myheader.changeColor); 
           woh cheezein nikalte hain jo aap apne sandwich mein istemal karna
           chahte hain.
         </p>
-
         <p>
           Destructuring bilkul waise hi hai. Hamare paas ek array ya object ho
           sakta hai jise hum istemal kar rahe hain, lekin hame inme se kuch hi
@@ -527,8 +518,8 @@ document.getElementById("btn").addEventListener("click", myheader.changeColor); 
         <h3>Example</h3>
         <p>before:</p>
         <p className="bgExample">
-            <pre>
-{`
+          <pre>
+            {`
           const vehicles = ['mustang', 'f-150', 'expedition']; <br />
           // old way const
           <br />
@@ -537,7 +528,7 @@ document.getElementById("btn").addEventListener("click", myheader.changeColor); 
           <br />
           const suv = vehicles[2];
 `}
-            </pre>
+          </pre>
         </p>
         <br />
         <p>
@@ -585,7 +576,6 @@ const [add, subtract, multiply, divide] = calculate(4, 7);
 `}
           </pre>
         </p>
-
         <br />
         <h2>Destructuring Objects</h2>
         <p>
@@ -765,7 +755,6 @@ const [add, subtract, multiply, divide] = calculate(4, 7);
         <p>
           <span className="clrRed">user.js</span>
         </p>
-
         <p className="bgExample">
           <pre>
             {`
@@ -818,7 +807,6 @@ const [add, subtract, multiply, divide] = calculate(4, 7);
           Named exports ko curly braces ka istemal karke destructuring karna
           padta hai. Default exports ko nahi karna padta.
         </p>
-
         <h3>Example</h3>
         <p>File user.js se named exports ko import karein:</p>
         <p className="bgExample">
@@ -836,7 +824,6 @@ const [add, subtract, multiply, divide] = calculate(4, 7);
   `}
           </pre>
         </p>
-
         <h2>ES6 Ternary Operator</h2>
         <p>
           Ternary Opeartor : Ternary operator ek simplified conditional operator
@@ -848,7 +835,6 @@ Syntax: condition ? <expression if true> : <expression if false>
  `}
         </p>
         <p>Yahan ek example if/else ka istemal karke:</p>
-
         <h3>Example</h3>
         <p>before:</p>
         <p className="bgExample">
@@ -997,7 +983,7 @@ Syntax: condition ? <expression if true> : <expression if false>
           </pre>
         </p>
         <br />
-        <h2>React JSX</h2>
+        <h2 id="JSX">React JSX</h2>
         <h3>What is JSX (JSX kya hai)?</h3>
         <p>JSX ka matlab hai JavaScript XML.</p>
         <p>JSX humein React mein HTML likhne me help karta hai.</p>
@@ -1142,7 +1128,6 @@ root.render(myElement);
           Agar HTML sahi se close nahi kiya gaya hai, to JSX ek error throw
           karega."
         </p>
-
         <h3>Attribute class = className</h3>
         <p>
           <span className="clrRed">Class</span> attribute HTML mein ek bahut
@@ -1157,7 +1142,6 @@ root.render(myElement);
           ka istemal karke kiya. Jab JSX render hota hai, to ye attributes ko
           class attributes mein translate karta hai.
         </p>
-
         <h3>Example</h3>
         <p>
           Use karo attribute <span className="clrRed">className</span> instead
@@ -1194,7 +1178,6 @@ root.render(myElement);
         <h4>Option 2</h4>
         <p>ternary expressions ko istemal karein instead:</p>
         <h3>Example</h3>
-
         <p>
           Write "Hello" if x is less than 10, otherwise "Goodbye". (Agar x 10 se
           kam hai, to "Hello" likhein, anyatha "Goodbye" likhein:)
@@ -1256,6 +1239,263 @@ root.render(myElement);
   }`}
           </pre>
         </p>
+        <h2>Function Component</h2>
+        <p>
+          Yahan upar diye gaye example ka ek aur roop hai, lekin is bar ek
+          Function component ka istemal kiya gaya hai.
+        </p>
+        <p>
+          Ek Function component bhi HTML vapas karta hai, aur ek Class component
+          ke jaisa same behave karta hai, lekin Function components ko likhne ke
+          liye kam code ka istemal hota hai, samajhne mein aasan hai, aur it is
+          more preffered now a days .
+        </p>
+        <h3>Example</h3>
+        <p>Create a Function component called Truck</p>
+        <p className="bgExample">
+          <pre>
+            {`
+          function Truck() {
+            return <h2>Hi, I am a yoyo Truck!</h2>;
+          }`}
+          </pre>
+        </p>
+        <h2>Rendering a Component</h2>
+        <p>
+          Ab aapke React application mein ek component hai jiska naam Truck hai,
+          jo ek {`<h2>`} element vapas karta hai.
+        </p>
+        <p>
+          Ise apne application mein istemal karne ke liye, normal HTML ke taur
+          par is tarah ka syntax istemal karein: {`<Truck />`}
+        </p>
+        <h3>Example</h3>
+        <p>Truck component ko "root" element mein dikhayein:</p>
+        <p className="bgExample">
+          <pre>
+            {`
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<Truck />);  `}
+          </pre>
+        </p>
+        <h2>Props</h2>
+        <p>
+          Components ko props ke roop mein bheja ja sakta hai, props se matlab
+          hai properties.
+        </p>
+        <p>
+          Props function ke arguments ki tarah hote hain, aur aap unhe component
+          mein attributes ke roop mein bhejte hain.
+        </p>
+        <p>Aap agle chapter mein props ke bare mein aur jaanenge.</p>
+        <h3>Example</h3>
+        <p>
+          Truck component ko ek color pass karne ke liye ek attribute ka istemal
+          karein, aur ise render() function mein istemal karein:
+        </p>
+        <p className="bgExample">
+          <pre>
+            {`
+ function Truck(props) {
+  return <h2>I am a {props.color} Truck!</h2>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Truck color="yellow"/>);`}
+          </pre>
+        </p>
+        <h2>Components in Components</h2>
+        <p>
+          Hum ek component ke andar dusre components ka istemal kar sakte hain:
+        </p>
+        <h3>Exapmle</h3>
+        <p>Use the Truck component inside the Garage component:</p>
+        <p className="bgExample">
+          <pre>
+            {`
+function Truck() {
+  return <h2>I am a Truck!</h2>;
+}
+
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my Garage?</h1>
+      <Truck />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);`}
+          </pre>
+        </p>
+        <h2>Components in Files</h2>
+        <p>
+          React ke sath code re-use karna boht asaan ho jata, aur yah
+          recommended hai ki aap apne components ko alag-alag seprate files mein
+          split karen
+        </p>
+        <p>
+          Iske liye, ek naye file banayein .js file extension ke saath aur
+          usmein code daalein:
+        </p>
+        <p className="bgYellow">
+          Dhyaan rahe ki filename ek uppercase character se shuru hona chahiye.
+        </p>
+        <h3>Example</h3>
+        <p>Ye hai naya file, humne iska naam "truck.js" rakha hai:</p>
+        <p className="bgExample">
+          <pre>
+            {`
+        function Truck() {
+          return <h2>Hi, I am a Truck!</h2>;
+        }
+        
+        export default Truck;`}
+          </pre>
+        </p>
+        <p>
+          Truck component ka istemal karne ke liye, aapko apne application mein
+          file ko import karna hoga.
+        </p>
+        <h3>Example</h3>
+        <p>
+          Ab hum "Truck.js" file ko application mein import karte hain, aur hum
+          Truck component ka istemal yahan kar sakte hain jaise ye yahin banaya
+          gaya ho.
+        </p>
+        <p className="bgExample">
+          <pre>
+            {`
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      import Truck from './Truck.js';
+      
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<Truck />);
+      `}
+          </pre>
+        </p>
+        <br />
+        <h2>React Props</h2>
+        <p>Props React components mein bheje jaane wale arguments hote hain.</p>
+        <p>Props components ko HTML attributes ke through bheje jaate hain.</p>
+        <p className="bgYellow">
+          <span className="clrRed">props</span> se matlab hai properties.
+        </p>
+        <h2>Props</h2>
+        <p>
+          React Props vaise hi jaise JavaScript mein function arguments aur HTML mein
+          attributes hote hain.
+        </p>
+        <p>Props ko ek component mein bhejne ke liye, HTML attributes ki tarah hi same syntax ka istemal karein:</p>
+        <h3>Example</h3>
+        <p>Add karo "brand" attribute to the Truck element:</p>
+        <p className="bgExample">
+{`const myElement = <Truck brand="TATA" />;`}
+        </p>
+        <p>Component argument ko <span className="crlRed">props</span> object ke roop mein recieve karta hai:</p>
+<h3>
+  Example
+</h3>
+<p>Component mein brand attribute ka istemal karein:</p>
+<p className="bgExample">
+  <pre>
+ {`
+ function Truck(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}`}   
+  </pre>
+</p>
+<h2>Press Data</h2>
+<p>Props are also how jisse aap data ko ek component se doosre component tak bhejte hain, parameters ki tarah.</p>
+<h3>Example</h3>
+<p>Garage component se 'brand' property Truck component mein bhejein:</p>
+<p className="bgExample">
+ <pre>
+ {`
+ function Truck(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Truck brand="TATA" />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+ `} </pre> 
+</p>
+<p>Agar aapke pass bhejne ke liye ek variable hai, upar diye gaye example ki tarah ek string nahi hai, toh aap bas variable name ko curly brackets ke andar daal dein:</p>
+<h3>Example</h3>
+<p><span className="clrRed">Truck</span> component ko bhejne ke liye ek variable banayein jiska naam <span className="clrRed">truckName</span> hai:</p>
+<p className="bgExample">
+  <pre>
+ {`
+ function Truck(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+function Garage() {
+  const truckName = "TATA";
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Truck brand={ truckName } />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);`}   
+  </pre>
+</p>
+<p>Ya agar yah ek object ho:</p>
+<h3>Example</h3>
+<p><span className="clrRed">Truck</span> component ko bhejne ke liye ek object banayein jiska naam <span className="clrRed">truckInfo</span> hai:</p>
+<p className="bgExample">
+  <pre>
+ {`
+ function Truck(props) {
+  return <h2>I am a { props.brand.model }!</h2>;
+}
+
+function Garage() {
+  const truckInfo = { name: "Tata", model: "Ashok Leyland" };
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Truck brand={ truckInfo } />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);`}   
+  </pre>
+</p>
+<br />
+<h2>
+React Events
+</h2>
+<p>Bilkul HTML DOM events ki tarah, React bhi actions perform kar sakta hai based on user event.</p>
+<p>React mein HTML ki tarah hi events hain: click, change, mouseover etc.</p>
+<h1>Adding Events</h1>
+<p>React events camelCase syntax mein likha jaata hai</p>
+<p><span className="crlRed">onClick</span> instead of <span className="clrRed">onclick</span>.</p>
+<p>React event handlers curly braces ke andar likhe jate hain:</p>
+<p>onClick={`{shoot}`}  instead of onclick="shoot()".
+</p>
+<h3>React</h3>
+<p className="bgExample">{`<button onClick={shoot}>Take the Shot!</button>`}</p>
+<h3>HTML</h3>
+<p className="bgExample">{`<button onclick="shoot()">Take the Shot!</button>`}</p>
       </div>
     </div>
   );
