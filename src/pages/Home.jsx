@@ -21,7 +21,6 @@ export default function Home() {
           design kiya gaya hai.
         </p>
         <p>React ka istemal single-page applications banane mein hota hai.</p>
-        <p>React ka istemal single-page applications banane mein hota hai.</p>
         <p>React hamen reusable UI components banane me madad karta hai.</p>
         <h2>Learn by Examples</h2>
         <p className="bgExample">
@@ -91,7 +90,7 @@ export default function Home() {
         <h2>React Kaise kaam Karta hai ?</h2>
         <p className="bgYellow">React memory mein ek VIRTUAL DOM banata hai</p>
         <p>
-          Brower ke DOM me sidha badlaav karne ki jagah, React memory mein ek
+          Browser ke DOM me sidha badlaav karne ki jagah, React memory mein ek
           virtual DOM banata hai, jahan par sab jaruri badlaav hota hai, uske
           baad jo jaruri changes hain browser ke DOM mein kiya jata hai.
         </p>
@@ -1686,6 +1685,77 @@ function Garage() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Garage />);`} </pre> 
 </p>
+<br />
+<h2>React Forms</h2>
+<p>Jaise ki HTML mein hota hai, waise hi React bhi forms ka istemal karta hai jisse users web page ke saath interact kar sakein.</p>
+<h2>Adding Forms in react</h2>
+<p>Aap React mein form ko kisi bhi aur element ki tarah hi add karte hain</p>
+<h3>Example</h3>
+<p>ek form add karo jisme users apna naam likh sakte ho:</p>
+<p className="bgExample"><pre>
+ {`
+ function MyForm() {
+  return (
+    <form>
+      <label>Enter your name:
+        <input type="text" />
+      </label>
+    </form>
+  )
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyForm />);`} 
+  </pre></p>
+  <p>Yeh normal kaam karega, form submit hoga aur page refresh hoga.</p>
+  <p>Lekin generally hum react mein aisa nahi chahte hain.</p>
+  <p>hum iss behaviour ko rokna chahte hain aur hum chahte hain React form control kare</p>
+  <h2>Handling Forms</h2>
+  <p>Forms ko handle karna yeh hai ki aap data kaise handle karte hain jab yeh value change hoti hai ya form submit hota hai.</p>
+  <p>HTML mein, usually form data DOM dwara handle hota hai.React mein, form data usually components dwara handle  hota hai.</p>
+  <p>Jab data components dwara sambhala jata hai, toh saara data component state mein stored hota hai.</p>
+  <p>Aap changes ko control karne ke liye <span className="clrRed">onChange</span> attribute mein event handlers add kar sakte hain.</p>
+  <p>Ham useState Hook ka istemal har input ke value ko track karne ke liye kar sakte hain aur poora application ke liye 'single source of truth' provide kar sakte hain."</p>
+  <h3>Example</h3>
+  <p><span className="clrRed">useState</span>hook ka istemaal karo input manage karne ke liye</p>
+  <p className="bgExample">
+   <pre>
+  {`
+  import { useState } from 'react';
+  import ReactDOM from 'react-dom/client';
+  
+  function MyForm() {
+    const [name, setName] = useState("");
+  
+    return (
+      <form>
+        <label>Enter your name:
+          <input
+            type="text" 
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+      </form>
+    )
+  }
+  
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<MyForm />);`}  
+    </pre> 
+  </p>
+  <h2>
+    Submitting froms
+  </h2>
+  <p>Aap submit action ko control kar sakte hain <span className="clrRed">{`<form>`}</span>  ke <span className="clrRed">onSubmit</span> attribute mein ek event handler add karke:</p>
+  <p>
+  Ek submit button aur ek event handler <span className="clrRed">onSubmit</span> attribute mein add karo:
+  </p>
+  <p className="bgExample">
+  
+  
+            
+  </p>
+
       </div>
     </div>
   );
